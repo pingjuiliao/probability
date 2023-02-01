@@ -1,0 +1,48 @@
+{
+  "patient": {
+    "obs_space": ["normal", "cold", "dizzy"],
+    "state_space": ["Healthy", "Fever"],
+    "start_prob": {"Healthy": 0.6,
+                   "Fever": 0.4
+    },
+    "trans_prob": {
+      "Healthy": {"Healthy": 0.7, "Fever": 0.3},
+      "Fever": {"Healthy": 0.4, "Fever": 0.6}
+    },
+    "emit_prob": {
+      "Healthy": {"normal": 0.5,
+                  "cold": 0.4,
+                  "dizzy": 0.1
+      },
+      "Fever": {"normal": 0.1,
+                "cold": 0.3,
+                "dizzy": 0.6
+      }
+    },
+    "obs_seqs": ["normal", "cold", "dizzy"],
+    "reference": "https://en.wikipedia.org/wiki/Viterbi_algorithm#Example"
+  },
+  "whether_guessing_game": {
+    "obs_space": ["walk", "shop", "clean"],
+    "state_space": ["Rainy", "Sunny"],
+    "start_prob": {"Rainy": 0.6,
+                   "Sunny": 0.4
+    },
+    "trans_prob": {
+      "Rainy": {"Rainy": 0.7, "Sunny": 0.3},
+      "Sunny": {"Rainy": 0.4, "Sunny": 0.6}
+    },
+    "emit_prob": {
+      "Rainy": {"walk": 0.1,
+                "shop": 0.4,
+                "clean": 0.5
+      },
+      "Sunny": {"walk": 0.6,
+                "shop": 0.3,
+                "clean": 0.1
+      }
+    },
+    "obs_seqs": ["walk", "shop", "clean"],
+    "reference": "https://en.wikipedia.org/wiki/Hidden_Markov_model#Examples"
+  }
+}
